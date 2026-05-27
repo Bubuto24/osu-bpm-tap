@@ -1,0 +1,6 @@
+# Use pep8 specification, and py311 for pypy compatibility
+target-version = "py311"
+line-length = 79
+
+[lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

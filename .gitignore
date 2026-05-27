@@ -1,0 +1,7 @@
+# Virtual environments
+.venv
+venv
+
+# Cache folders
+.ruff_cache
+__pycache__
