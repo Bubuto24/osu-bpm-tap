@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import logging
 import sys
 import time
 
@@ -12,7 +11,7 @@ from helpers.user_input import get_keycount, get_keys
 from helpers.utils import calculate_bpm, is_different_event
 
 
-def main() -> None:
+def windows() -> None:
     print("{:-^50}\n".format("OSU TAPPING PRACTICE"))
     keycount = 0
     keys: tuple[str, str] = get_keys()
@@ -29,7 +28,7 @@ def main() -> None:
     while keycount < target_keycount:
         event = keyboard.read_event(suppress=True)
 
-        logging.debug("Event: %s", event)
+        Log.debug("Event: %s", event)
 
         if event.name == "q":
             sys.exit()
@@ -48,7 +47,7 @@ def main() -> None:
 
             keycount += 1
 
-            logging.debug("Keycount changed to %s", keycount)
+            Log.debug("Keycount changed to %s", keycount)
 
         previous_event = event
 
@@ -60,6 +59,4 @@ def main() -> None:
     keyboard.wait("enter", suppress=True)
 
 
-if __name__ == "__main__":
-    Log.init()
-    main()
+windows()
